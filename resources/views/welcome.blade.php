@@ -1,21 +1,51 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<x-layout>
+    <div class="bg-kyoo-secondary-400 text-white">
+        {{-- Navbar --}}
+        <nav class="relative container mx-auto p-6">
+            {{-- Flex Container --}}
+            <div class="flex items-center justify-between">
+                {{-- Logo --}}
+                <div class="pt-2">
+                    <img src="{{ URL::to('/') }}/images/kyoo-logo.svg" alt="kyoo-logo" class="h-16 w-16 mr-2">
+                </div>
+                {{-- Menu Items --}}
+                <div class="hidden space-x-12 md:flex ">
+                    <a href="#"
+                        class=" py-2 px-2 hover:text-kyoo-primary-300 border-b-2 border-kyoo-primary-400 transition duration-200 ">
+                        HOME
+                    </a>
+                    <a href="#" class="py-2 px-2 hover:text-kyoo-primary-300 transition duration-200">FAQs</a>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <a href="#" class="py-2 px-2 hover:text-kyoo-primary-300 transition duration-200">SEND
+                        FEEDBACK</a>
+                </div>
+                {{-- Buttons --}}
+                <div class="hidden space-x-3 md:flex">
+                    <a href="#" class="btn-primary-red">LOGIN</a>
+                    <a href="#" class="btn-primary-red">VIEW
+                        QUEUE</a>
+                </div>
 
-    <title>Kyoo</title>
+                {{-- Not Final --}}
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <svg class="w-6 h-6 text-kyoo-secondary-500" x-show="!showMenu" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                            stroke="white">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
 
-    {{-- Fonts --}}
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        {{-- Hero Section --}}
+        @include('partials.__hero-section')
 
-    {{-- Tailwind CSS --}}
-    @vite('resources/css/app.css')
-</head>
+        {{-- Wave --}}
+        <img src="{{ URL::to('/') }}/images/wave.png" alt="" class="w-auto">
 
-<body class="antialiased">
-
-</body>
-
-</html>
+        {{-- Footer Section --}}
+        @include('partials.__footer')
+</x-layout>

@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom Components Style */
+@layer components {
+    .btn-primary-red {
+        @apply p-3 px-6 pt-2 text-white bg-kyoo-primary-300 rounded-lg hover:bg-kyoo-primary-500 transition duration-300;
+    }
+}
