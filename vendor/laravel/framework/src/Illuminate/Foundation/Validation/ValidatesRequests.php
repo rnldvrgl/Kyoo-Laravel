@@ -47,17 +47,11 @@ trait ValidatesRequests
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function validate(
-        Request $request,
-        array $rules,
-        array $messages = [],
-        array $customAttributes = []
-    ) {
+    public function validate(Request $request, array $rules,
+                             array $messages = [], array $customAttributes = [])
+    {
         $validator = $this->getValidationFactory()->make(
-            $request->all(),
-            $rules,
-            $messages,
-            $customAttributes
+            $request->all(), $rules, $messages, $customAttributes
         );
 
         if ($request->isPrecognitive()) {
@@ -82,13 +76,9 @@ trait ValidatesRequests
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function validateWithBag(
-        $errorBag,
-        Request $request,
-        array $rules,
-        array $messages = [],
-        array $customAttributes = []
-    ) {
+    public function validateWithBag($errorBag, Request $request, array $rules,
+                                    array $messages = [], array $customAttributes = [])
+    {
         try {
             return $this->validate($request, $rules, $messages, $customAttributes);
         } catch (ValidationException $e) {
