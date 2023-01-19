@@ -18,9 +18,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            // ? Main Admin == 0, Department Admin == 1, Staff == 2, Librarian == 3
-            $table->tinyInteger('role')->default();
-            $table->string('username')->unique();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
