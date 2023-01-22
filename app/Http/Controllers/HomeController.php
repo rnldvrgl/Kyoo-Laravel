@@ -21,7 +21,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    // ! Disregard since di naman gagamitin yung home.blade.php (Templat)
+    // ! Disregard since di naman gagamitin yung home.blade.php (Template)
     // public function index()
     // {
     //     return view('home');
